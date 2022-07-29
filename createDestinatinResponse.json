@@ -1,0 +1,12 @@
+{
+    "resource": {
+      "sqs": null,
+      "eventBridge": {
+        "name": "aws.partner/sellingpartnerapi.amazon.com/943202111128/amzn1.sp.solution.7a2316ee-9053-403e-9cde-93a9008f38cb",
+        "accountId": "943202111128",
+        "region": "us-east-1"
+      }
+    },
+    "destinationId": "f9b35a68-7b29-4655-884d-552753c57d8d",
+    "name": "notifications"
+  }
