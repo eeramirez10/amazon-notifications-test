@@ -9,10 +9,12 @@ router.get('/', (req, res)=>{
     vCard = vCardsJS();
  
     //set properties
-    vCard.firstName = 'Eric';
-    vCard.middleName = 'J';
-    vCard.lastName = 'Nesser';
-    vCard.organization = 'ACME Corporation';
+    vCard.firstName = 'German';
+   
+    vCard.lastName = 'Barranco';
+    vCard.organization = 'Tuvansa';
+    vCard.workPhone = '55 7904 4897';
+    vCard.title = 'Gerente de Sistemas';
  
     //set content-type and disposition including desired filename
     res.set('Content-Type', 'text/vcard; name="enesser.vcf"');
