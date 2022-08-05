@@ -1,4 +1,4 @@
-{
+[{
     "resource": {
       "sqs": null,
       "eventBridge": {
@@ -9,4 +9,8 @@
     },
     "destinationId": "f9b35a68-7b29-4655-884d-552753c57d8d",
     "name": "notifications"
-  }
+  },
+
+  {
+    "account": ["943202111128"]
+  }]
