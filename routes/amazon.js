@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const SellingPartnerAPI = require('amazon-sp-api');
 
-const { getOrders, getOrdersVendorDirectFulFillment, getOrderItemsBuyerInfo, RDT } = require("../controllers/amazonOrders");
+const { getOrders, RDT } = require("../controllers/amazonOrders");
 
 let sellingPartner = new SellingPartnerAPI({
     region: 'na',
@@ -27,13 +27,11 @@ router.post('/notificaciones', (req,res) => {
 })
 
 router.get('/orders', getOrders)
-// router.get('/ordersVendorsFul', getOrdersVendorDirectFulFillment);
 
-// router.get('/order/buyerInfo', getOrderItemsBuyerInfo);
 
 router.get('/rdt', RDT)
 
-// router.get('/orders', async (req, res) => {
+
 
 
 //     try {
