@@ -22,7 +22,8 @@ const auth = new SellingPartnerApiAuth({
 
 // Fecha Inicial en formato 2022-08-01T00:00:00-07:00
 
-const insertaOrdenesFirebase = async (fechaInicial = '2022-08-01T00:00:00-07:00', resultadosPorPagina = 100 ) => {
+const insertaOrdenesFirebase = async (fechaInicial, resultadosPorPagina = 100 ) => {
+    
 
     const ordersAPI = new OrdersApiClient({
         auth,
@@ -93,9 +94,24 @@ const insertaOrdenesFirebase = async (fechaInicial = '2022-08-01T00:00:00-07:00'
             continue;
         }
 
-
         //Si son nuevos 
-        await collectionAmazon.doc(orden.AmazonOrderId).set(orden)
+        //order.estatus = 1;
+        await collectionAmazon.doc(orden.AmazonOrderId).set(
+            {   ...orden,
+                shippment: {},
+                estatus: 1,
+                costoProveedor: 0,
+                proveedor: "",
+                seleccionado: false,
+                totalDeposito: 0,
+                utilidad: 0,
+                utilidadPromedio: 0,
+                fleteIva: 0,
+                envioCorreo: false,
+                alertaRoja: false,
+                atroz: false,
+                guia: false,
+            })
 
         insertados += 1;
 

@@ -23,8 +23,10 @@ const auth = new SellingPartnerApiAuth({
 
 
 const getOrders = async (req, res) => {
-
-    const fechaInicial = req.query?.fechaInicial || '2022-08-01T00:00:00-07:00';
+    var fechahoy = new Date();
+    const restardias = fechahoy.setDate(fechahoy.getDate() - 15)
+    var fechafinal = new Date(restardias).toISOString();
+    const fechaInicial = req.query?.fechaInicial || fechafinal;
     const resultados = req.query?.resultados || 10;
 
     const ordersAPI = new OrdersApiClient({
@@ -39,6 +41,8 @@ const getOrders = async (req, res) => {
     });
 
     try {
+
+        console.log(fechaInicial);
 
         const { data } = await ordersAPI.getOrders({
             marketplaceIds: ['A1AM78C64UM0Y8'],
